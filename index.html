@@ -1,158 +1,2406 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-	<head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<!-- meta tags, fill them with website meta infos -->
+	<meta name="description" content="Research Essay Website" />
+	<meta name="keywords" content="Antidote, Reckoning, Lifelike Beauty" />
+	<meta name="author" content="Olivia Huynh" />
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="assets/images/favicon/white_rectangle.webp" />
 
-		<!-- meta tags, fill them with website meta infos -->
-		<meta name="description" content="Description of your web page" /> 
-		<meta name="keywords" content="Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5 ..."/> 
-		<meta name="author" content="Name of the author/owner of the webpage's content" />
+	<title>Synthetic Transcendence</title>
 
-		<!-- favicon, fill with a 512x512px .png image named 'favicon.png' -->
-		<link rel="icon" href="assets/images/favicon/favicon.png"/>
+	<!-- links for extensions and dependencies -->
 
-		<!-- website title, visible in the browser window and on link sharing -->
-		<title>Website title</title>
+	<!-- css normalize -->
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<!-- you stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css?ver=1.0">
 
-		<!-- links for extensions and dependencies -->
+</head>
 
-		<!-- css -->
-		<!-- first link your CSS dependences, here is normalize, a CSS 'reset' for cross-browser appearence uniformity -->
-		<link rel="stylesheet" href="assets/css/normalize.css">
-		<!-- you stylesheet -->
-		<link rel="stylesheet" href="assets/css/style.css?ver=1.0">
+<body>
 
-		<!-- js -->
-		<!-- first link your javascript dependencies -->
+	<div class="screen" id="screen">
 
-		<!-- your website scripts goes at the end of this document, right before the closing </body> -->
-	    
-	</head>
+		<div class="top-bar">
+			<a href="" class="toggle-btn-cross"></a>
 
-	<body>
+			<div class="progress-track">
+				<div class="progress-bar" id="progressBar"></div>
+				<div class="progress-percentage"></div>
+			</div>
 
-		<!-- webpage content goes here -->
+			<button id="toggleBtn-text" class="toggle-btn-text"></button>
+		</div>
 
-		<div class="page-wrapper">
-
-			<header>
-
-				<h1>Hello World!</h1>
-				<p>A <strong>document</strong> by <em>me</em></p>
-
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#chapter-1">Chapter 1</a></li>
-						<li><a href="#chapter-2">Chapter 2</a></li>
-						<li><a href="#chapter-3">Chapter 3</a></li>
-						<li><a href="#epilogue">Epilogue</a></li>
-					</ul>
-				</nav>
-
-			</header>
-
-			<main>
-
-				<h2 id="intro">Intro</h2>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus nulla, rutrum eget malesuada sit amet, gravida in nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ligula felis, consectetur ut mi eu, egestas interdum augue. Aliquam a ipsum lectus. Pellentesque a vulputate ligula, id malesuada quam. Cras eleifend in leo vitae pellentesque. Duis ac vehicula sem, ut blandit leo. Mauris vulputate dapibus velit tincidunt varius. Duis euismod diam tellus, eget dictum ante suscipit quis. Nunc sed est ipsum. Nunc luctus augue id sapien blandit fermentum. Aenean eget ipsum lacinia mi eleifend luctus at a arcu.
-				</p>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="chapter-1">Chapter 1</h2>
-
-				<p>
-					Sed volutpat mauris at tempus cursus. Aenean finibus eros nibh, vel consequat velit porta ut. In faucibus ante sed mattis efficitur. Duis semper scelerisque sollicitudin. Vestibulum faucibus, nisl at venenatis posuere, nisi felis congue mauris, eget auctor mi nulla nec tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sapien metus, blandit vehicula purus quis, vehicula cursus erat. Donec non cursus neque.
-				</p>
-
-				<details>
-
-					<summary>
-						<h3 id="intro">Sub-content, example of an accordion</h2>
-					</summary>
-
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus nulla, rutrum eget malesuada sit amet, gravida in nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ligula felis, consectetur ut mi eu, egestas interdum augue. Aliquam a ipsum lectus. Pellentesque a vulputate ligula, id malesuada quam. Cras eleifend in leo vitae pellentesque. Duis ac vehicula sem, ut blandit leo. Mauris vulputate dapibus velit tincidunt varius. Duis euismod diam tellus, eget dictum ante suscipit quis. Nunc sed est ipsum. Nunc luctus augue id sapien blandit fermentum. Aenean eget ipsum lacinia mi eleifend luctus at a arcu.
-					</p>
-
-					<p>
-						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-					</p>
-
-				</details>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="chapter-2">Chapter 2</h2>
-
-				<p>
-					Proin non pellentesque leo. Integer finibus luctus mi eu egestas. Integer placerat non tortor id lacinia. Donec faucibus fermentum porta. Praesent fringilla sapien id tempor vestibulum. Morbi egestas dolor vitae lacus mattis, id posuere nulla viverra. Ut ultricies placerat mi, et porttitor nunc sodales sit amet. Cras vehicula lectus eget tortor efficitur, sit amet imperdiet velit varius. Pellentesque ultricies purus pretium magna efficitur, eget interdum orci dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum finibus, lorem at blandit luctus, massa libero feugiat ex, non fringilla ante sem quis lorem. Cras ac consequat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque suscipit turpis leo, at dapibus justo rutrum sed. In nunc nunc, sagittis eget rutrum consectetur, tempus vitae augue.
-				</p>
-
-				<figure>
-
-					<a href="content/painting-forest-lake.jpg" target="_blank">
-				    	<img src="content/painting-forest-lake.jpg" alt="A painted representation of a forest with a big blue lake" width="100%" height="auto">
-				    </a>
-
-				    <figcaption>
-
-				    	<p>
-				    		<em><a href="https://www.youtube.com/watch?v=bkKTSw4pL2A" target="_blank">Painting of a forest with a blue lake</a>, by Anonymous</em>
-				    	</p>
-
-				    </figcaption>
-
-				</figure>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="epilogue">Epilogue</h2>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-			</main>
+		<div class="bottom-bar">
+			<button id="toggleBtn-arrowleft" class="toggle-btn-arrowleft">←</button>
+			<button id="toggleBtn-arrowright" class="toggle-btn-arrowright">→</button>
+		</div>
 
 
+		<div class="track">
 
-			<footer>
+			<div class="picture_container special">
+				<div class="cover-text">
+					<div class="cover-title">
+						Synthetic Transcendence
+					</div>
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Synthetic Transcendence explores the extent to which AI-generated images can interpret a
+							person’s emotional and spiritual experience of everyday life. In my graphic design
+							practice, I utilize image-making, through photography and text-to-image generation, to
+							unravel the tension between ‘real’ and ‘fake’ images. Inspired by my Australian-Chinese
+							upbringing in Singapore’s ‘expat bubble’, I aim to shed light on this less obvious
+							culture and community that I grew up with.
+							<br><br>
+							I apply Susan Sontag’s ‘The Aesthetics of Silence,’ John Berger’s ‘Ways of Seeing,’ Lev
+							Manovich’s ‘AI Aesthetics’, and Masahiro Mori’s ‘Uncanny Valley,’ to examine how
+							AI-generated images mystify and challenge our perception of reality. By doing so, I
+							comment on the intentions of my own image-making project, photographer Daniel Vaysberg’s
+							work, and Midjourney’s founder David Holz’s philosophy, all of which put fundamental
+							theories of visual meaning into practice.
+							<br><br>
+							This research exploration concludes that text-to-image generation is a cure for the
+							desire to visually clarify mental concepts, that AI-generated images confront current
+							assumptions about contemporary art, and that they can be harnessed as beacons to procure
+							personally meaningful creations rather than a deceptive performance.
+						</div>
+					</div>
+				</div>
+			</div>
 
-				<hr>
+			<div class="picture_container special cover">
+				<div class="cover-text">
+					<div class="intro_container">
+						<div>
+							Images bridge the gap between subjective experience with collective culture for people to
+							access
+							a more vibrant spectrum of the world. I’ve always gravitated towards visual expression as a
+							means
+							of understanding intention. I find observations of people in the environments and
+							communities they
+							inhabit as a telling sign of their character, for sight, I believe, is more nuanced than
+							words
+							per show-don’t-tell.
+						</div>
+						<div>
+							In my practice, I use images to showcase unique perspectives that are elusive in urban
+							lives. In
+							recent prototypes, I used text-to-image generation to highlight the intimate, beautiful
+							details
+							of everyday spaces that defined my Australian-Chinese upbringing in Singapore’s ‘expat
+							bubble’. My
+							graduation project aims to shine light on the lesser known culture and community of people
+							that
+							I grew up with.
+						</div>
+						<div>
+							To unravel ongoing tensions between ‘real’ and ‘fake’ images, I explore ambivalence towards
+							artificial intelligence as a tool for contemporary art. For many, loss of the non-automated
+							human effort behind older image-making forms, like painting and photography, makes
+							text-to-image
+							generation appear less meaningful. As real as they look, AI-generated images are patterns
+							conceived by computer algorithms that lack intention. They are entirely fabricated and
+							completely
+							superficial interpretations of the human words, so what can they convey about a person’s
+							personal impression
+							of an environment?
+						</div>
+						<div>
+							<i>Synthetic Transcendence</i> explores the extent to which AI-generated images can
+							interpret a
+							person’s emotional and spiritual experience of everyday life.
+						</div>
+					</div>
+					<div class="back-btn">Back</div>
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
 
-				<p>
-					Last edit date: 2023/12/11
-				</p>
+						</div>
+					</div>
+				</div>
 
-			</footer>
+			</div>
+
+			<div class="picture_container special chapter">
+
+				<div class="chapter-title_container">
+					<button class="toggle-btn-moodboard"><img src="content/MOODBOARD-ICON.svg"></button>
+
+					<div class="chapter-name">Antidote</div>
+
+					<div class="back-btn">Back</div>
+				</div>
+
+				<div class="moodboard_container">
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_2.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_7.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_8.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_9.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_10.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_11.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_14.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_15.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_16.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_17.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_18.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_19.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_20.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_21.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_22.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_23.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_24.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+				</div>
+			</div>
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_1.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							<i>Artificial Intelligence (AI) allows us to produce photos faster than ever before, but are
+								they still ‘photos’ in the same sense of the word? AI allows us to make videos without
+								the
+								need to go anywhere to film them, but are they even ‘videos’ anymore?</i>
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								intimate-car-detail,-console-and-hands,-thermos-and-small-objects,-driver-cropped-out-of-frame,-quiet-ride-home-mood-in-singapore,-raw-candid-iPhone-shot,-slightly-accidental-composition
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,3 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_1.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Apple iPhone SE (2nd generation)</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										instagram.com/olvepng<br>
+										19 September 2021
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_2.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							There is a spiritual project that defines the notion of modern art.
+							<br><br>
+							Art is a reflection of experience, it tells a story and evokes emotions. Photos and videos
+							show us how things were seen at a certain time, by an individual. They freeze moments in
+							history, giving us the chance to reflect upon them. It seemed impossible to create an image
+							without lived experience, until AI defied this very assumption. Given this visual
+							contradiction, how do viewers treat AI-generated images?
+						</div>
+
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								vietnamese-student-lying-on-beige-couch-partially-caught-in-frame,-evening-mood-lighting,-cowhide-lounge-chair-behind,-soft-rug,-warm-ambient-glow,-relaxed-after-school,-candid-iPhone-shot,-raw-offbeat-framing,-intimate,-unposed,
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,1 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_2.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										tight-close-shot-of-friend-shifting-or-stretching-on-sofa,-parts-of-body-cut-off,-slightly-messy-framing,-warm-lighting,-candid-everyday-moment,-unpolished-feel
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_3.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							The AI-generated image is in the unique predicament of being based on representations of
+							human experience, but not a representation of the human experience itself. Informed by
+							datasets containing billions of image-text pairs, AI-generated images are constructed out of
+							pure logic as opposed to emotional intuition.<sup>1</sup> Essentially, text-to-image
+							generation is an
+							image-making process that is inherently detached from the nature of conscious human
+							experience, so, to what extent can it be used to mimic the quality of human depth?
+						</div>
+						<div class="picture-data">
+							<div class="footnote">
+								<sup>1</sup> James Vincent, “An Engine for the Imagination: An Interview with David
+								Holz,” The Verge, 2022. ›
+							</div>
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								modern-bathroom-with-clean-marble-surfaces,-white-towels,-orchid-and-framed-artwork,-lots-of-empty-space,-slightly-tilted-framing,-soft-ambient-light,-calm-understated-luxury-in-Singapore,-candid-raw-photo
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・1,9 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_3.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										modern-bathroom-with-clean-surfaces,-white-towels,-orchid-and-framed-artwork,-lots-of-empty-space,-slightly-tilted-framing,-soft-ambient-light,-calm-understated-luxury,-candid-raw-photo
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_4.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							American writer Susan Sontag, in her essay ‘The Aesthetics of Silence’, claims that every
+							era must reinvent the project of ‘spirituality’ for itself. In my view, this denotes the use
+							or presentation of something in a new way, to enact moments for us to re-assess our reality
+							in the changing world. Today I see this act of reinvention as text-to-image generation.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								tight-crop-clothes-drying-outdoors-bukit-timah-landed-house,-pastel-pink-and-dark-fabric-textures,-bright-sun-casting-crisp-shadows,-tiled-floor,-quiet-domestic-moment,-raw-natural-composition
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,3 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_5.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In the modern era, Sontag suggests that one the most active metaphors for the spiritual
+							project is ‘art’. Supposedly, people turn to ‘art’, in place of religion, as the site in
+							which consciousness confronts the meaning of life. The spiritual project, the path towards a
+							higher level of knowing, is subjective to the individual. To Sontag, spirituality refers to
+							the plans, terminologies, ideas of behaviour aimed at the resolution of deeply embedded
+							tensions within a system (person, organisation, or society) inherent to the human condition;
+							“at the completion of human consciousness, at transcendence.”
+							<br><br>
+							With this in mind, do AI-generated images resolve our desire to perceive existence better?
+							In a sense, yes. For instance, if a person wants to create a photo of a dog but has no dog
+							to take a photo of, text-to-image generation makes it possible. But is it still ‘a photo of
+							a dog’ anymore? The event is faked, the dog and the action of capturing the scene never
+							occurred, however the creator’s intention behind the image remains real.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-candid-shot-friend-floating-on-inflatable-crocodile,-bukit-timah-black-and-white-house-pool,-soft-ripples,-sun-reflecting-on-water,-subject-slightly-off-center,-partial-float-cropped,-calm-warm-light,-iPhone-photo
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・1,9 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_6.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Sontag asserts that no matter what goal is set for art, it will prove restrictive when
+							matched against the goals of consciousness. She suggests that art itself is a form of
+							mystification that uses ‘cries of demystification’ to attack older artistic goals and
+							supposedly replace them; redrawing outgrown maps of knowledge.
+							<br><br>
+							Interestingly, she suggests that our desire for demystification is powered by the
+							unification of separate disciplines into the single category of ‘art’. A dilemma of the
+							modern era. This creates the notion that all these disciplines, be it photography, painting,
+							music, or dance, all serve to achieve the same goal: transcendence. However, given the
+							subjective nature of this goal, a problematic arena for comparison arises, which causes the
+							procedures and the very existence of these activities to be called to question (in the name
+							of ‘art’).
+							<br><br>
+							I deem AI-generated images ‘art’, but in this way, it too assumes the role of achieving the
+							same goal as all the other ‘art’ forms in my head. For instance, when the result I get from
+							an AI-generated image fails to meet the emotional or spiritual response of a photographed
+							image, I question the quality of this ‘art form’. Nevertheless, they let us feel as though
+							what we want to see can be seen. Images of Narnia are just a few prompts away. Essentially,
+							instead of showing us what a photo does, or what a painting does, AI-generated images show
+							as something else: the human imagination interpreted by computer processes. Which, in it of
+							itself, is quite spectacular.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								skater-rolling-down-ramp-in-condo-courtyard,-white-penny-board-standing-out-against-grey-concrete,-plants-and-railings-around,-quiet-bukit-timah-atmosphere,-candid-shot-by-friend,-slightly-off-center-framing
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_7.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							There are myths about art, but the newer one, the myth Sontag denotes as modern art, not
+							only denies art as mere expression, but also describes it as the mind’s need or capacity for
+							self-extrangement: to feel alienated from others and society as a whole.<sup>2</sup> In the
+							modern era,
+							art, mystification, is not the answer to full consciousness, but rather its antidote —
+							evolved from consciousness itself.
+							<br><br>
+							For as long as I can remember, my spiritual project pertained to identity. As part of the
+							prototyping stage of my graduation project, I adopt text-to-image generation as a forum to
+							explore my own childhood nostalgia. In Singapore, I grew up in the ‘expat bubble’: an
+							eco-system containing the amalgamation of various international cultures in an environment
+							semi-secluded from the country’s local population. It has always been a peculiar thing for
+							outsiders to understand, so it has been a desire of mine to find a better way to recognise
+							the place I call home. Evidently, the development of an image series won’t construct my
+							‘identity’ per se, instead, it will serve to provide clarity.
+						</div>
+						<div class="picture-data">
+							<div class="footnote">
+								<sup>2</sup> “Self-estrangement,” Wikipedia, Wikimedia Foundation, 2025. ›
+							</div>
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								candid-iPhone-photo-of-AISS-kids-playing-at-local-park-on-Chwee-Chian-Rd-Singapore,-camera-angled-slightly-downward,-grass-and-feet-dominating-frame,-faces-partly-out-of-frame,-awkward-crop,-raw-uncomposed-feel
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,5 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_7.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										candid-iPhone-photo-of-AISS-kids-playing-at-local-park-on-Chwee-Chian-Rd-Singapore,-camera-angled-slightly-downward,-grass-and-feet-dominating-frame,-faces-partly-out-of-frame,-awkward-crop,-raw-uncomposed-feel
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_8.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Sontag looks at ‘the aesthetics of silence’ in reference to the behaviour of the great
+							religious mystics. To her, just as the activities of the mystic must end upon their
+							completion of the spiritual project, when the mind unites with God and the body can rest at
+							last, modern art craves peace in the form of ‘nothingness’. As a means of mimicking the
+							completion of consciousness, Sontag suggests that “art must tend towards anti art — the
+							elimination of the “subject” (the “object, the “image”) in order to substitute chance for
+							intention, and the pursuit of silence.”
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-candid-shot-of-Vietnamese-kid-crouching-or-bending-to-pet-black-and-silver-schnauzer,-parts-of-body-cut-off,-dog-mid-movement,-messy-framing,-bright-green-turf-in-Singapore,-raw-everyday-moment
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,3 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_8.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										close-candid-shot-of-kid-crouching-or-bending-to-pet-dog,-parts-of-body-cut-off,-dog-mid-movement,-messy-framing,-bright-green-turf,-raw-everyday-moment
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_9.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							I’m in the pursuit of clarity in the realm of self identity. In the form of a silent
+							presentation, instead of explaining who I am, or selling who I am, I display a wallowing in
+							who I knew myself to be in the form of image-making. From experience, I’ve found that my
+							authentic self lies in the act of enjoying what I like: image-making. And through context
+							and intention, I arrive at an outcome that visually manifests the values I cherish for
+							others to see and know. Using Midjourney, I don’t depict myself, rather, I depict the
+							objects, spaces, and movements that mimic my own first-hand experience of the Singapore
+							Island. These scenes possess an avant garde quality that I intentionally employ to emphasize
+							the specific textures and postures I associate with feelings of comfort. I disappear, and
+							instead of a blatant advertisement of my existence, the viewer is shown an anonymous point
+							of view, through which they can arrive at more authentic conclusions. In this way, seeing
+							through my lens, embodiment of such an identity comes to life.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-friends’-hands,-playful-gestures,-phone-resting-nearby,-school-setting,-natural-daylight-in-UWCSEA-Dover-campus-singapore,-candid-iPhone-shot,-raw-offbeat-framing
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・1,9 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_9.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Apple iPhone SE (2nd generation)</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										instagram.com/olvepng<br>
+										2 March 2021
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_10.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							<div class="subheading">Silence & Presence in Vaysberg’s Photography</div>
+							<hr>
+							<div class="subheading-content">
+								Ukrainian/Jewish photographer Daniel Vaysberg captures models in mundane places,
+								insinuating the surrealist nature of urban environments. In his photographs for COEVAL
+								(Issue 2,
+								Fall Winter 2025/26), he employs candid framing and a causal setting to dramatise the
+								presence of the model and her luxurious outfit. There is no visibly flamboyant display,
+								no other
+								people or sense of helpful assistance, there is no ‘life’ but the model’s. Effectively,
+								she is
+								portrayed lonesome but complete. In my view, Vaysberg eliminates the lively and uses
+								‘silence’ to introduce a powerful ‘aura’ that needs no further validation.
+							</div>
+							<div class="see-photos-btn">↪ see photographs</div>
+							<div class="fig-image">
+								<img src="content/FIG/D_1.jpg">
+							</div>
+							<div class="fig-image">
+								<img src="content/FIG/D_2.jpg">
+							</div>
+						</div>
+						<div class="picture-data">
+							<div class="footnote footfig">
+								<div class="fig">Fig .1</div>
+								<div class="fig-text">
+									Photographs by Daniel Vaysberg, Coeval, Issue 2, Fall/Winter 2025–26.
+								</div>
+							</div>
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-math-class-desk,-student-writing-on-worksheet,-calculator,-laptop,-pens-scattered,-partial-heads-and-arms,-candid-iPhone-shot,-raw-offbeat-framing
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_10.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Apple iPhone SE (2nd generation)</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										instagram.com/olvepng<br>
+										'Methemetics', 25 January 2022<br>
+										<!-- raw-candid-close-shot-of-teenagers-crossing-a-bright-green-school-field-under-harsh-Singapore-sun,-laughing-while-melting-ice-cream-drips-over-their-hands,-unposed-and-unaware,-calm-everyday-moment,-soft-shadows,-natural-colors,-iPhone-realism,-spontaneous-framing,-cinematic-but-casual -->
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_11.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Viewers appear to garner spiritual meaning from images, AI-generated images, through what it
+							allows them to see, as opposed to what it actually shows. AI-generated images have the
+							ability to cure a creator’s desire to visually clarify mental concepts, and as a result,
+							make them, me, feel as though clarity is within reach.
+							<br><br>
+							Written in 1967, ‘The Aesthetics of Silence’ remains quite telling of today’s contemporary
+							art scene. However, it is an outlook on the way humanity adopts art that will, according to
+							Sontag, reinvent itself in the future.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								private students in uniform sitting on the floor in singapore
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_11.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										close-shot-sitting-on-bus-bay-floor,-uniforms-slightly-rumpled,-water-bottles-and-bags-scattered,-partial-bodies-cropped,-quiet-after-school-moment,-clean-iPhone-quality,-imperfect-framing
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container special chapter">
+				<div class="chapter-title_container">
+					<button id="toggleBtn-moodboard" class="toggle-btn-moodboard"><img
+							src="content/MOODBOARD-ICON.svg"></button>
+					<div class="chapter-name">Reckoning</div>
+					<div class="back-btn">Back</div>
+				</div>
+
+				<div class="moodboard_container">
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_2.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_7.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_8.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_9.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_10.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_11.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_14.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_15.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_16.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_17.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_18.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_19.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_20.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_21.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_22.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_23.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_24.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_12.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							The circumstances through which we come to know ourselves and the world around us drives the
+							way we perceive images.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								hawker-centre-table-at-Maxwell,-Singapore,-leftover-plates,-bowls,-chopsticks,-drinks,-slightly-messy,-close-candid-iPhone-photo,-off-center-composition,-fluorescent-lighting,-raw-everyday-moment
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_12.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										hawker-centre-table-at-Maxwell,-Singapore,-leftover-plates,-bowls,-chopsticks,-drinks,-slightly-messy,-close-candid-iPhone-photo,-off-center-composition,-fluorescent-lighting,-raw-everyday-moment
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_13.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In the book ‘Ways of Seeing’, author John Berger asserts the fact that “seeing comes before
+							words”. He suggests that there is an ever-present disconnect between what we see and what we
+							know, proposing that sight is the product of continuously active choices of looking that
+							occur in accordance with “the relation between things and ourselves”. In this way, viewers
+							don’t experience an image as an isolated event, rather, they perceive it in relation to its
+							context. For instance, its placement on a billboard or its appearance on an instagram feed.
+							As a result, our vision is a two-way street that originates from what is present to us as we
+							are to it.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								Inside-an-SBS-transit-bus-in-Singapore
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_13.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										Inside-an-SBS-transit-bus-in-Singapore
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_14.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							According to Berger, every image embodies a way of seeing. However, AI-generated images no
+							longer require a person to actively choose a subject matter or the way it is being framed,
+							for the computer is able to do all that automatically. Given our history with older
+							image-making methods, text-to-image generation is an odd and often misunderstood tool. For
+							many, AI-generated images are a hack, and low-blow to the ‘art’ of image-making. They mimic
+							the strenuous human effort behind photography and painting in a matter of seconds to produce
+							similar, or even arguably better results. 
+							<br><br>
+							To some, it seems unfair and perhaps intimidating, so a cautionary question arises: Is
+							text-to-image generation something to accept passively? In my view, automation is the
+							public’s key concern about AI and the future of culture. Raising questions like: what
+							happens when humans are no longer in control? And: have we already lost control?
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								intimate-floor-level-shot,-rackets-resting-after-play,-layered-textures,-court-markings,-soft-reflections-from-overhead-lights,-quiet-moment,-raw-candid-iPhone-shot,-slightly-accidental-composition
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・1,9 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_14.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										intimate-floor-level-shot,-rackets-resting-after-play,-layered-textures,-court-markings,-soft-reflections-from-overhead-lights,-quiet-moment,-raw-candid-iPhone-shot,-slightly-accidental-composition
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_15.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In 2018, Russian artist Lev Manovich suggests that there is a skewed perception of AI,
+							specifically in the way we think it is affecting our lives. According to an article
+							published in 2006 by The Washington Post, there is an ‘AI effect’: when we know how a
+							machine does something ‘intelligent’, it ceases to be regarded as intelligent. For instance,
+							existing tasks that have been automated using AI, like Google’s Smart Reply function, is an
+							out of sight out of mind topic that has receded into the grey zone of our day-to-day lives.
+							Consequently, the more challenging, not-yet-perfected AI jobs like natural speech
+							understanding, automated translation, and the recognition of objects in photos, are
+							magnified to the extent in which our perception of ‘AI’ revolves around these more obvious
+							features. So, is AI mediating the way society functions, our behaviour, without our apparent
+							knowledge?
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								friend-crouching-tying-shoelaces-on-court,-others-blurred-in-background,-slightly-tilted-frame,-off-center-composition,-bright-indoor-light,-calm-pause-during-practice,-candid-everyday-shot
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・1,8 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_15.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										friend-entering-kayak,-shot-through-pool-edge-or-equipment,-partially-obstructed,-off-center-composition,-bright-daylight,-candid-spontaneous-photo,-training-environment
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_16.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In the realm of image-making, there is a plethora of less obvious AI-automated processes
+							that are intentionally and unintentionally used to guide aesthetic creation and aesthetic
+							choices that go unseen. For example, Instagram’s Explore screen recommends images and videos
+							to each user based on a combination of many factors (not based on what the user liked in the
+							past).<sup>3</sup> The Huawei Mate 10 phone camera (released 10/2017) uses AI to analyze
+							what it sees to
+							then select the appropriate parameters for capturing a given scene before you decide to take
+							a photo.<sup>4</sup> Evidently, AI influences our way of seeing in many other ways than
+							text-to-image
+							generation, so how can we combat this to protect our authentic intentions?
+						</div>
+						<div class="picture-data">
+							<div class="footnote">
+								<sup>3</sup> Lev Manovich, AI Aesthetics (Strelka Press, 2018). ›<br>
+								<sup>4</sup> Manovich, AI Aesthetics. ›
+							</div>
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-of-Vietnamese-Australian-students-sitting-on-bus-bay-floor,-uniforms-slightly-rumpled,-partial-bodies-cropped,-quiet-after-school-moment,-clean-iPhone-quality,-imperfect-framing
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_17.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Manovich alluded to the implementation of customizable features to increase the ‘aesthetic
+							diversity’ of the AI algorithms and user interfaces of various digital services, apps, and
+							products, as a means of harnessing AI to our unique benefit. In Midjourney, I exercised this
+							notion by creating a moodboard of my own photographs to serve as the direct visual
+							inspiration for the images I would later create. In this way, as opposed to submitting
+							myself to Midjourney’s default aesthetics, I curated my own style (avant garde framing and
+							cool colour tones) to visually interpret my prompts. However, as part of my work flow, I
+							used chatGPT to rewrite my specific ideas of childhood in Singapore in a way that would be
+							well-interpreted by the Midjourney bot. This worked well with my intentions, but the extent
+							to which I am in control of this image-making process remains foggy.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-edge-of-round-glass-top-wooden-table,-single-bowl-of-tangyuan-slightly-off-center,-one-hand-entering-frame-with-spoon,-most-of-frame-empty-floor,-wooden-stools-partially-cropped,-carved-wooden-door-faintly-visible,-raw-candid-iPhone-shot,-2016-core
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_18.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Interestingly, the founder of Midjourney David Holz compares AI to water. He argues that
+							while we can ‘drown’ ourselves in AI, it can also sustain us if we learn to live and work
+							with it. According to him, many people view AI to be some kind of adversary, a tiger that
+							might eat us. However, it is important to remember that AI has no intent. It is
+							directionless, so its ‘flow’ can be navigated, hosted, or channelled as a source of
+							inspiration and power.
+							<br><br>
+							Whether or not AI becomes a tool that liberates our will appears to be entirely up to our
+							collective use of it. One could argue that those in power have more control of this decision
+							than we do, but I believe, in terms of the enormity of public data AI drives on, that it is
+							the actions of the general community that weighs more heavily.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-candid-iPhone-photo-of-belongings-on-backseat-of-a-car,-tote-bag,-clothes,-water-bottle,-sunglasses,-casually-thrown-together,-shot-by-friend,-slightly-tilted,-awkward-crop,-natural-daylight-through-window,-soft-shadows,-raw-spontaneous-moment
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,5 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_19.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In my AI-generated image, I intentionally dictate the exclusion of eyes, full human figures,
+							and vast landscapes to create an ambiguity that draws the viewer’s focus to the scenario, as
+							opposed to a specific character or location. In this way, I aim to create a ‘vibe’ that
+							translates the idea of my upbringing in Singapore into core universal feelings, like warmth,
+							care, and safety, that the viewer can appreciate no matter how familiar they are with the
+							island’s lifestyle. 
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								bicycle-in-the-bukit-timah-nature-reserve-trail-in-Singapore
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,9 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="img-prompt">
+								<div class="img-prompt-title">
+									<div class="img-prompt-heading">
+										<img src="content/IMAGE-PROMPT-ICON.svg">
+										<div>Image Prompts</div>
+									</div>
+									<div class="img-prompt-expander">›</div>
+								</div>
+								<div class="img-prompt-picture">
+									<img src="content/MJ_IMG_REF/REF_19.png">
+								</div>
+								<div class="img-prompt-source">
+									<div>Source: Midjourney Creation</div>
+									<div class="img-prompt-dots">...</div>
+								</div>
+								<div class="img-prompt-details">
+									<div>
+										inside-a-black-and-white-house-in-bukit-timah-Singapore
+									</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_20.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In terms of text-to-image generation, the dynamic between the creator and AI is
+							exponentially advancing. I think the existing level of aesthetic diversity available
+							platforms, such as Midjourney, is a good step in the direction towards harnessing AI to
+							produce personally engaged, meaning results like the more direct activities in life.
+							<br><br>
+							Humans are complex creatures, so a person’s personal context may not be the only factor
+							guiding their perception of the world. While our preconceived notions of life aren’t always
+							deliberate, by recontextualising our opinions and learning more about how AI mediates our
+							access to images, we will not only see them more clearly, but also obtain the power to
+							utilize them more meaningfully.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								tight-close-shot-of-friend-shifting-or-stretching-on-sofa,-parts-of-body-cut-off,-slightly-messy-framing,-warm-lighting,-candid-everyday-moment,-unpolished-feel
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,7 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container special chapter">
+				<div class="chapter-title_container">
+					<button id="toggleBtn-moodboard" class="toggle-btn-moodboard"><img
+							src="content/MOODBOARD-ICON.svg"></button>
+					<div class="chapter-name">Lifelike Beauty</div>
+					<div class="back-btn">Back</div>
+				</div>
+
+				<div class="moodboard_container">
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_2.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_7.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_8.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_9.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_10.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_11.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_14.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_15.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_16.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_17.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_18.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_19.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_20.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_21.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_22.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_23.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder">
+						<img class="md-main-image" src="content/MOODBOARD/MD_24.png">
+						<div class="holder-panel">
+							<img class="holder-icon" src="content/CAMERA-ICON.svg">
+						</div>
+					</div>
+
+					<div class="md-picture_holder"></div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_21.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							The viewer’s affinity towards AI-generated images is linked to how realistic they look.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-folding-paper-for-modular-origami-with-grandpa,-third-person-view,-hands-and-arms-overlapping,-colored-paper-pieces-scattered,-warm-daylight,-candid-iPhone-shot,-raw-offbeat-framing
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_22.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Japanese roboticist Masahiro Mori, in his essay “The Uncanny Valley”, hypothesized that a
+							person’s response to a human-like robot, as it attempts to approach a lifelike appearance,
+							would abruptly shift from empathy to revulsion.<sup>5</sup> Related articles suggest that
+							this response
+							may be due to an evolutionary, subconscious signal for pathogen avoidance or threat
+							detection.
+							<br><br>
+							According to Mori, the prevalence of monotonic relationships (when two variables share a
+							uni-directional correlation) in everyday phenomena, makes it easy for us to fall under the
+							illusion that all relationships behave this way. For instance, in the context of robotics,
+							engineers may be under the impression that the more human-like a robot appears, the more
+							friendly they would seem to people. Mori suggests the opposite.
+							<div class="see-photos-btn">↪ see <i>uncanny valley</i> graph: the relationship between
+								human likeness and perceived affinity</div>
+							<div class="fig-image">
+								<img src="content/FIG/UV_M.svg">
+							</div>
+						</div>
+						<div class="picture-data">
+
+							<div class="footnote footfig">
+								<div class="fig">Fig .2</div>
+								<div class="fig-text">
+									The uncanny valley graph showing the relationship between human likeness and
+									perceived affinity. From Mori, MacDorman, and Kageki, 2012.
+								</div>
+							</div>
+
+							<div class="footnote">
+								<sup>5</sup> Masahiro Mori, Karl F. MacDorman, and Norri Kageki, “The Uncanny Valley,”
+								IEEE Robotics & Automation Magazine, 2012. ›
+							</div>
+
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								sophisticated,-elegant,-modern-DBS-bank-office-in-the-CBD-of-Singapore,-minimal-and-candid
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_23.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							AI-generated images attempt to resemble camera-shot photographs. Although artificial, they
+							mimic representations of the human experience at a level of detail that can make the viewer
+							second guess apparent distortions of the real world. However, to what extent can
+							AI-generated images garner photo-like responses from its audience?
+							<br><br>
+							In the case of human-like robots, Mori’s explanations appear to assume that the viewer is
+							always aware of the fact that the human-like robot, no matter how lifelike it appears, is a
+							robot. This suggests that viewer’s revulsion stems from visual confusion as opposed to
+							knowledge confusion. 
+							<br><br>
+							On the contrary, the viewer of an AI-generated image may not know that it has been
+							AI-generated. People reportedly experience the uncanny effect, when they notice subtle
+							inconsistencies in an AI-generated image but cannot yet identify what is wrong. In this
+							scenario, does the viewer’s revulsion stem from visual confusion, knowledge confusion (not
+							knowing it is AI-generated), or both?
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								low-angle-office-floor-and-chair-base,-clean-lines-and-soft-light,-subtle-movement-of-someone-walking-past,-minimal-composition,-candid-third-person
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,8 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_24.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							Nevertheless, I apply Mori’s ‘Uncanny Valley’ graph to AI-generated images of increasing
+							hyperrealism to theorise how the viewer would respond to them as they attempt to reach the
+							appearance of real life photos (see Fig. 3).
+							<br><br>
+							a. When both human affinity and photo likeness is low, this marks the position of blurry
+							AI-generated images (see Fig. 4). The subject matter is unintelligible, so the viewer cannot
+							make sense of their connection to the real world.
+							<br><br>
+							b. When both human affinity and photo likeness is high, this marks the position of realistic
+							images that look obviously AI-generated (high saturation, inaccurate texture) (see Fig. 5).
+							The subject matter is intelligible, so the viewer makes sense of their connection to the
+							real world but cannot envision its presence realistically.
+							<br><br>
+							c. When human affinity is low and photo likeness is high, this marks the position of
+							hyperrealistic AI-generated images (see Fig. 6). The subject matter is not only
+							intelligible, they look just like they would in a camera-shot photograph, so the viewer
+							makes sense of their connection to the real world and can envision its presence
+							realistically. However, upon further analysis, the subtle errors (anatomical mishaps) of
+							these images creates a cognitive dissonance: the viewer sees a very convincing ‘photo’ that
+							displays life in the way a photo usually would. This is the uncanny valley.
+							<br><br>
+							d. When both human affinity and photo likeness is high again, this marks the position of
+							camera-shot photographs (see Fig. 7). The subject matter in these images are intelligible,
+							so the viewer makes sense of their connection to the real world and can envision its
+							presence realistically.
+						</div>
+						<div class="picture-data">
+
+							<div class="footnote footfig">
+								<div class="footfig-duo">
+									<div class="fig">Fig .3</div>
+									<div class="fig-text">
+										The uncanny valley graph showing the relationship between human likeness and
+										perceived affinity. From Mori, MacDorman, and Kageki, 2012.
+									</div>
+								</div>
+								<div class="fig-expand">›</div>
+							</div>
+
+							<div class="fig-expand-image">
+								<img src="content/FIG/UV_O.svg">
+							</div>
+
+							<div class="footnote footfig">
+								<div class="footfig-duo">
+									<div class="fig">Fig .4</div>
+									<div class="fig-text">
+										Image from Memories, an AI-generated series by UNVEIL®, 2024.
+									</div>
+								</div>
+								<div class="fig-expand">›</div>
+							</div>
+
+							<div class="fig-expand-image">
+								<img src="content/FIG/EX_A.jpeg">
+							</div>
+
+							<div class="footnote footfig">
+								<div class="footfig-duo">
+									<div class="fig">Fig .5</div>
+									<div class="fig-text">
+										PF26 campaign image, photographed and motified by Helen Yang and Nathan Wright,
+										2025.
+									</div>
+								</div>
+								<div class="fig-expand">›</div>
+							</div>
+
+							<div class="fig-expand-image">
+								<img src="content/FIG/EX_B.jpg">
+							</div>
+
+							<div class="footnote footfig">
+								<div class="footfig-duo">
+									<div class="fig">Fig .6</div>
+									<div class="fig-text">
+										Image from Pharaoh, an AI-generated series by Olivia Huynh, 2025.
+									</div>
+								</div>
+								<div class="fig-expand">›</div>
+							</div>
+
+							<div class="fig-expand-image">
+								<img src="content/FIG/EX_C.jpg">
+							</div>
+
+							<div class="footnote footfig">
+								<div class="footfig-duo">
+									<div class="fig">Fig .7</div>
+									<div class="fig-text">
+										Image from Portraits, an ongoing photographic series by Pavle Nikolić, 2022.
+									</div>
+								</div>
+								<div class="fig-expand">›</div>
+							</div>
+
+							<div class="fig-expand-image">
+								<img src="content/FIG/EX_D.jpg">
+							</div>
+
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-corner-of-bed-in-a-black-and-white-house-in-singapore,-smooth-linen-and-soft-shadows,-monkey-barely-visible-at-edge-of-frame,-minimal-and-intimate,-raw-candid
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,2 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_25.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							It seems like the only barrier stopping the AI-generated image from achieving high human
+							affinity and photo likeness is its subtle errors. Given the current trajectory of AI
+							technology, it is only a matter of time until this barrier is no longer. At the moment,
+							viewers’ cognitive dissonance towards hyperrealistic AI-generated images appears to prevent
+							them from pleasantly accessing the visual as a friendly gesture. So, how can we create
+							AI-generated images that appear wholesome? 
+							<br><br>
+							Mori suggests that the meaning behind an object’s conceptual function overpowers its
+							physical appearance. In other words, it is an object’s purpose or function, rather than its
+							appearance, that ultimately defines its meaning to us. For instance, Mori states that
+							although eyeglasses do not resemble real eye-balls, one could say that their design has
+							created a charming pair of new eyes. Thus, he predicts that it is possible to create a safe
+							level of affinity by deliberately pursuing a less lifelike design. In this way, the user is
+							no longer at risk to cognitive dissonance, and instead, welcomes the object’s presence
+							positively.
+							<br><br>
+							Published in 2012, Mori’s research uses graphs to model the human response to artificial
+							lifelike appearances. However, the spiritual nature of our behaviour (denoted by Sontag)
+							suggests that this method of analysis is inadequate. To elaborate, the uncanny feeling may
+							not only pertain to the detection of unlifelike traits as a biological survival tactic, but
+							also an ontological uneasiness about the nature of human consciousness.
+							<br><br>
+							‘The Uncanny Valley’ hypothesis suggests that viewers experience emotional meaning in
+							AI-generated images if they are able to connect the subject matter to a real world context,
+							and when their understanding of its intention is positive.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								close-shot-hands-adjusting-brown-belt-knot,-children-opposite-each-other,-forearms-crossing-into-frame,-cropped-torsos,-layered-white-fabric,-quiet-supportive-gesture,-clean-iPhone-quality,-raw-offbeat-composition
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,1 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="picture_container">
+				<div class="panel panel-main">
+					<img src="content/HOME-LIFE_MJ/HL_26.png">
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							In my project, I use AI-generated images to illustrate nostalgic warmth. I want my images to
+							look wholesome and positive. Thus, to achieve a pleasant viewer response, Mori’s theory
+							suggests that AI-generated images should not look almost identical to a camera-shot
+							photograph. With this in mind, my images intend to accurately mimic the natural and urban
+							spaces in Singapore while leaving subtle errors, like fusing objects and unidentifiable
+							limbs, untouched. As a result, I portray my images not as photographed scenes, but as
+							AI-generated interpretations of my childhood culture and community, a personally meaningful
+							exhibit rather than an act of deception.
+						</div>
+						<div class="picture-data">
+							<hr>
+							<div class="date-of-creation liveDateTime"></div>
+							<div class="prompt">
+								kayak-training-in-school-pool,-half-submerged-student,-mid-recovery,-sun-reflecting-off-water,-warm-glow,-calm
+								action,-raw-candid-iPhone-shot,-slightly-messy-composition
+							</div>
+							<div class="camera-info">
+								<div class="camera">
+									<div>Midjourney V8 Alpha</div>
+									<div class="format">PNG</div>
+								</div>
+								<div class="lens">
+									No lens information
+								</div>
+								<div class="stats">
+									1 MP・1344 × 896・2,7 MB
+								</div>
+								<div class="camera-summary">
+									<div class="summary-value">--ar 3:2</div>|
+									<div class="summary-value">--stylize 400</div>|
+									<div class="summary-value">--p 8xg2yuq</div>
+								</div>
+							</div>
+							<div class="copyright">
+								<i>Synthetic Transcendence</i><br>
+								© 2026 Olivia Huynh. All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="picture_container special cover">
+				<div class="cover-text">
+					<div class="conclusion_container">
+						<div>
+							The tension between ‘real’ and ‘fake’ images is in fact the birth of a new zone of
+							recognition and practice. Text-to-image generation allows us to see what other image-making
+							methods haven’t, curing the desire to clarify our thoughts and ideas of the world.
+							AI-generated images confront society’s standards of knowledge, the assumptions people make
+							about ‘art’, and, more specifically, our intentions behind the making of visual
+							representation in the contemporary age. In addition, they act as a symbol for thought that
+							can be harnessed to procure reflection.
+						</div>
+						<div>
+							Using Midjourney, I generated a series of images depicting scenes that mimic visual
+							representations of my life as a child surrounded by the lesser known culture and community
+							of Singapore’s expat bubble. By adopting Sontag’s notion of ‘silence’ to simulate spiritual
+							completion, I display my unique identity through the visual elimination of my objective
+							self. With up-close and intimate image-framing, I procure an anonymity that translates my
+							story into core universal feelings that can appeal to viewers from a diverse range of
+							backgrounds, and offer nuance to the sector of South East Asia I grew up in. Last but not
+							least, I embrace the AI image-making medium in a manner that celebrates its artificial
+							nature, treating it as a tool for personally meaningful creation as opposed to deception.
+						</div>
+					</div>
+					<div class="back-btn">Back</div>
+				</div>
+				<div class="panel panel-side">
+					<div class="side-content">
+						<div class="body-text">
+							<div class="reference-title">
+								References
+							</div>
+							<div class="reference-list">
+								<div>Berger, John. Ways of Seeing. Penguin Books, 2008.</div>
+
+								<div>Manovich, Lev. AI Aesthetics. Strelka Press, 2018.</div>
+
+								<div>Mori, Masahiro, Karl F. MacDorman, and Norri Kageki. “The Uncanny Valley.” IEEE
+									Robotics
+									& Automation Magazine, vol. 19, no. 2, 2012, pp. 98–100.</div>
+
+								<div>Sontag, Susan. “The Aesthetics of Silence.” Styles of Radical Will, Farrar, Straus
+									and
+									Giroux, 1969, pp. 3–34.</div>
+
+								<div>“Uncanny Valley.” Wikipedia, Wikimedia Foundation, 2026,
+									en.wikipedia.org/wiki/Uncanny_valley.</div>
+
+								<div>Vincent, James. “An Engine for the Imagination: An Interview with David Holz.” The
+									Verge, 2 Aug. 2022,
+									https://www.theverge.com/2022/8/2/23287173/ai-image-generation-art-midjourney-multiverse-interview-david-holz.
+								</div>
+
+								<div>“Self-estrangement.” Wikipedia, Wikimedia Foundation, 1 Nov. 2025,
+									en.wikipedia.org/wiki/Self-estrangement.</div>
+
+								<div>Vaysberg, Daniel. Photograph. Coeval, Issue 2, Fall/Winter 2025–26.</div>
+
+								<div>Nikolić, Pavle. Portraits. 2022.</div>
+
+								<div>Zhang, Helen Y., and Nathan Wright. PF26. 2025.</div>
+
+								<div>UNVEIL. Memories. 2024.</div>
+
+								<div>Huynh, Olivia. Pharaoh. 2025.</div>
+
+								<div>Huynh, Olivia. Prototypes. 2026. AI-generated image series.</div>
+							</div>
+						</div>
+						<div class="picture-data">
+							<div class="footnote">
+								Colophon
+								<br><br>
+								Synthetic Transcendence:<br>
+								<i>To what extent can AI-generated images interpret a person’s emotional and spiritual
+								experience of everyday life?</i>
+								<br><br>
+								Written by Olivia Huynh<br>
+								Under the guidance of Dirk Vis<br>
+								Proofreading by Binh Nguyen
+								<br><br>
+								Royal Academy of Art, The Hague (KABK)<br>
+								Graphic Design Department
+								<br><br>
+								2026
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
 
 
 
 		</div>
 
+	</div>
 
 
-		<!-- end webpage content -->
 
 
-		<!-- website script right before closing </body> tag -->
-		<script type="text/javascript" src="assets/js/script.js?ver=1.0"></script>
+	<script src="assets/js/script.js"></script>
+</body>
 
 
-	</body>
 
 </html>
