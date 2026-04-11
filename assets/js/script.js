@@ -162,13 +162,21 @@ function closeAllMoodboards() {
 }
 //
 
+// BACK BUTTON + ARROW AUTOMATICALLY STAY DOWN ON CHaPTER PAGES
 function goToSlide(index) {
   currentIndex = Math.max(0, Math.min(index, slides.length - 1));
 
   closeAllMoodboards();
 
+  const activeSlide = slides[currentIndex];
+
+  // auto-close side panel on chapter screens
+  if (activeSlide.classList.contains('chapter')) {
+    screen.classList.remove('split');
+  }
+
   screen.scrollTo({
-    left: slides[currentIndex].offsetLeft,
+    left: activeSlide.offsetLeft,
     behavior: 'auto'
   });
 
@@ -176,10 +184,18 @@ function goToSlide(index) {
   updateSpecialState();
   updateProgressBar();
 }
+//
 
 function updateButtons() {
+  const activeSlide = slides[currentIndex];
+
   prevBtn.disabled = currentIndex === 0;
   nextBtn.disabled = currentIndex === slides.length - 1;
+
+  // ONLY hide on .end slide
+  nextBtn.style.visibility = activeSlide.classList.contains('end')
+    ? 'hidden'
+    : 'visible';
 }
 
 function updateCurrentIndexFromScroll() {
@@ -295,3 +311,20 @@ document.querySelectorAll('.fig-expand').forEach(btn => {
     btn.classList.toggle('active');
   });
 });
+
+
+// INTRO_CONTAINER FADE
+document.querySelectorAll('.intro_container').forEach((el) => {
+  function updateFade() {
+    const hasOverflow = el.scrollHeight > el.clientHeight + 1;
+    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+
+    el.classList.toggle('fade', hasOverflow && !atBottom);
+  }
+
+  el.addEventListener('scroll', updateFade);
+  window.addEventListener('resize', updateFade);
+  updateFade();
+});
+
+

@@ -242,13 +242,18 @@ i {
 
   z-index: 10;
 
-  width: fit-content;
+  width: 30pt;
+  height: 30pt;
 
-  border: none;
-  height: auto;
   background-color: transparent;
 
-  transition: opacity 0.2s ease;
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle-btn-moodboard img {
@@ -262,7 +267,7 @@ i {
   bottom: 30pt;
 
   cursor: pointer;
-  z-index: 10;
+  z-index: 5;
 }
 
 .back-btn.active {
@@ -306,10 +311,6 @@ i {
   object-position: center;
   display: block;
   transition: transform 0.2s ease, clip-path 0.2s ease;
-}
-
-.toggle-btn-moodboard.active {
-  opacity: 0.5;
 }
 
 .moodboard_container.active {
@@ -368,7 +369,6 @@ i {
 
   font-size: 9pt;
   font-family: 'Inter-Regular';
-  /* border: 1px red solid; */
 }
 
 .cover-title {
@@ -386,29 +386,41 @@ i {
 
   display: flex;
   flex-direction: column;
-  gap: 0pt;
+  gap: 10pt;
 
   font-family: 'Inter-Regular';
   line-height: 1.5;
-
   text-align: justify;
   hyphens: auto;
+  word-spacing: -1.2pt;
+
+  height: calc(100vh - 150pt);
+  min-height: 0;
+
+  z-index: 20;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
-.conclusion_container {
-  grid-column: 1 / span 2;
-  margin-top: 30pt;
-  margin-left: 40pt;
+.intro_container.fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent);
+  mask-image: linear-gradient(to bottom, black 75%, transparent);
+}
 
-  display: flex;
-  flex-direction: column;
-  gap: 0pt;
+.intro_container.no-fade {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
 
-  font-family: 'Inter-Regular';
-  line-height: 1.5;
-
-  text-align: justify;
-  hyphens: auto;
+.intro_container>div {
+  flex: 0 0 auto;
 }
 
 
@@ -536,10 +548,11 @@ i {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+
+  border-bottom: 1.25px solid black;
 }
 
 .picture-data {
-  border-top: 1.25px solid black;
   padding-block: 13pt;
   padding-inline: 15pt;
   line-height: 1.5;
@@ -563,7 +576,7 @@ i {
   gap: 10pt;
 }
 
-.footfig-duo{
+.footfig-duo {
   display: flex;
   flex-direction: row;
   gap: 10pt;
@@ -794,6 +807,7 @@ hr {
 
 
 
+
 @media (max-width: 1000px) {
 
   .progress-percentage {
@@ -809,8 +823,7 @@ hr {
 
   .cover-text {
     width: calc(100vw - 120pt);
-    height: calc(100% - 40pt);
-
+    height: calc(100vh - 40pt);
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
@@ -832,23 +845,10 @@ hr {
 
   .intro_container {
     grid-column: 1 / span 4;
-    margin-top: 20pt;
-    margin-inline: 40pt;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0pt;
+    margin-top: 30px;
+    margin-inline: 0px;
   }
 
-  .conclusion_container {
-    grid-column: 1 / span 4;
-    margin-top: 20pt;
-    margin-inline: 40pt;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0pt;
-  }
 
   /* CHAPTER */
   .chapter-title_container {
@@ -882,36 +882,14 @@ hr {
     position: relative;
   }
 
-  .toggle-btn-moodboard {
-    grid-row: 3 / span 1;
-    grid-column: 1 / span 1;
-    transform: translate(0, 2pt);
-
-    z-index: 10;
-
-    width: fit-content;
-
-    border: none;
-    height: auto;
-    background-color: transparent;
-
-    transition: opacity 0.2s ease;
-  }
-
-  .toggle-btn-moodboard img {
-    width: 15pt;
-  }
-
   .back-btn {
     display: none;
     position: absolute;
     margin-left: 40pt;
     bottom: 30pt;
-
     cursor: pointer;
     z-index: 10;
   }
-
 
   /* PICTURE CONTAINERS */
 
@@ -941,7 +919,6 @@ hr {
     width: 100vw;
     height: 0;
 
-    border-left: none;
     border-top: 1.25px solid black;
 
     z-index: 20;
@@ -956,6 +933,7 @@ hr {
   .screen.split .panel-side {
     width: 100vw;
     height: 60vh;
+    border-left: none;
   }
 
   .side-content {
@@ -999,6 +977,14 @@ hr {
   .screen.split .bottom-bar {
     width: calc(100vw - 40pt);
     height: 40vh;
+  }
+
+  .screen.split .intro_container {
+    height: calc(100vh - 120pt - 60vh);
+  }
+
+  .screen.split .back-btn {
+    transform: translate(0, -57.5vh);
   }
 
   /* SIDE PANEL */
