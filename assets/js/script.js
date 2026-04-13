@@ -45,6 +45,7 @@ const prevBtn = document.getElementById('toggleBtn-arrowleft');
 const nextBtn = document.getElementById('toggleBtn-arrowright');
 const progressText = document.querySelector(".progress-percentage");
 const backBtns = document.querySelectorAll('.back-btn');
+const targetIcon = document.querySelector('.target-icon');
 
 let chapterTimeout = null;
 
@@ -73,7 +74,12 @@ function typeText(element, text, speed = 70) {
 function updateSpecialState() {
   const activeSlide = slides[currentIndex];
 
-  if (activeSlide.classList.contains('special')) {
+  const isPictureContainer = activeSlide.classList.contains('picture_container');
+  const isCover = activeSlide.classList.contains('cover');
+  const isChapter = activeSlide.classList.contains('chapter');
+  const isSpecial = activeSlide.classList.contains('special');
+
+  if (isSpecial) {
     topBar.classList.add('state-dark');
     bottomBar.classList.add('state-dark');
   } else {
@@ -81,17 +87,17 @@ function updateSpecialState() {
     bottomBar.classList.remove('state-dark');
   }
 
+  // show + on normal .picture_container slides
+  // hide + on .cover and .chapter slides
+  const showTargetIcon = isPictureContainer && !isCover && !isChapter;
+  targetIcon.style.display = showTargetIcon ? 'block' : 'none';
+
   // hide all back buttons first
   backBtns.forEach(btn => {
     btn.classList.remove('active');
   });
 
-  if (
-    activeSlide.classList.contains('chapter') ||
-    activeSlide.classList.contains('cover')
-  ) {
-
-
+  if (isChapter || isCover) {
     const backBtn = activeSlide.querySelector('.back-btn');
     if (backBtn) {
       backBtn.classList.add('active');
@@ -162,7 +168,7 @@ function closeAllMoodboards() {
 }
 //
 
-// BACK BUTTON + ARROW AUTOMATICALLY STAY DOWN ON CHaPTER PAGES
+// BACK BUTTON + ARROW AUTOMATICALLY STAY DOWN ON CHAPTER PAGES
 function goToSlide(index) {
   currentIndex = Math.max(0, Math.min(index, slides.length - 1));
 
@@ -291,13 +297,40 @@ document.querySelectorAll('.see-photos-btn').forEach(btn => {
 
 
 // IMAGE PROMPT EXPANDER
-document.querySelectorAll('.img-prompt-expander').forEach(btn => {
+document.querySelectorAll('.img-prompt-title').forEach(btn => {
   btn.addEventListener('click', () => {
     const container = btn.closest('.img-prompt');
     const picture = container.querySelector('.img-prompt-picture');
 
-    picture.classList.toggle('active');
-    btn.classList.toggle('active');
+    if (picture.classList.contains('active')) {
+      picture.style.height = picture.scrollHeight + 'px';
+
+      requestAnimationFrame(() => {
+        picture.style.height = '0px';
+      });
+
+      picture.classList.remove('active');
+      btn.classList.remove('active');
+
+    } else {
+      picture.classList.add('active');
+      btn.classList.add('active');
+
+      picture.style.height = '0px';
+
+      requestAnimationFrame(() => {
+        picture.style.height = picture.scrollHeight + 'px';
+      });
+    }
+  });
+
+  const container = btn.closest('.img-prompt');
+  const picture = container.querySelector('.img-prompt-picture');
+
+  picture.addEventListener('transitionend', () => {
+    if (picture.classList.contains('active')) {
+      picture.style.height = 'auto';
+    }
   });
 });
 
