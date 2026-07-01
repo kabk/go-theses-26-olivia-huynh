@@ -65,7 +65,7 @@ sup {
 
 .cite-heading {
     min-width: calc(var(--margin) * 2);
-    padding-block:0;
+    padding-block: 0;
 }
 
 b {
@@ -430,7 +430,7 @@ p {
     flex-direction: row;
 
     align-items: start;
-    justify-content:left;
+    justify-content: left;
 
     text-align: left;
     hyphens: none;
@@ -515,9 +515,7 @@ p {
     top: calc(var(--margin) * 15);
 }
 
-.text-panel.settings-expanded .settings-fade.bottom {
-    
-}
+.text-panel.settings-expanded .settings-fade.bottom {}
 
 .text-panel.has-settings-overflow:not(.settings-at-top) .settings-fade.top {
     display: block;
@@ -952,7 +950,7 @@ p {
     background-color: transparent;
 }
 
-.viewer.dark-ui .text-btn{
+.viewer.dark-ui .text-btn {
     border-color: lime;
     color: lime;
 }
@@ -983,7 +981,7 @@ p {
     color: rgb(255, 255, 255);
 }
 
- .viewer.last-slide .arrow-r {
+.viewer.last-slide .arrow-r {
     display: none;
 }
 
@@ -1023,27 +1021,17 @@ p {
         width: 100vw;
         height: 0;
         transition: height 0.5s ease;
-
-        /* border: red 1px solid; */
     }
 
     .slide.panel-open .visual-panel {
         width: 100vw;
         height: 0vh;
-
         opacity: 0;
     }
 
     .slide.panel-open .text-panel {
         width: 100vw;
         height: calc(100vh);
-    }
-
-    .viewer.panel-open .ui {
-        width: 100vw;
-        height: 0vh;
-
-        opacity: 0;
     }
 
     .text-panel-inner,
@@ -1065,9 +1053,10 @@ p {
         transform-origin: center 0vh;
     }
 
-   .viewer.panel-open .ui {
+    /* navigation btns */
+
+    .viewer.panel-open .ui {
         width: 100vw;
-        height: 0;
     }
 
     .viewer.panel-open .exit-btn,
@@ -1075,18 +1064,99 @@ p {
     .viewer.panel-open .arrow-l,
     .viewer.panel-open .v-line,
     .viewer.panel-open .h-line,
-    .viewer.panel-open .plus-target,
-    .viewer.panel-open .slide-progress {
+    .viewer.panel-open .plus-target {
         opacity: 0;
         pointer-events: none;
     }
 
-    .viewer.panel-open .text-btn {
-        opacity: 1;
-        pointer-events: auto;
-        z-index: 999;
+    .text-btn {
+        transition: 0.5s ease;
     }
 
+    .viewer.panel-open .text-btn,
+    .viewer.panel-open .slide-progress {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 50;
+    }
+
+    .viewer.panel-open .text-btn {
+        color: black;
+        background-color: rgb(230, 230, 230);
+        border-color: black;
+    }
+
+    /* extension */
+
+
+    
+    .text-panel.inner-expanded .text-panel-inner {
+        height: calc(100% - (var(--margin) * 15));
+        z-index: 30;
+        border-bottom: 1px black solid;
+    }
+
+    .text-panel.inner-expanded .arrow-t {
+        transform:
+            translateY(calc(50vh - (var(--margin) * 16))) rotate(-180deg);
+    }
+
+    .text-panel.inner-expanded .arrow-ts {
+        transform:
+            translateY(calc(50vh - (var(--margin) * 14))) rotate(0deg);
+    }
+
+    .text-panel.settings-expanded .text-panel-settings {
+        height: calc(100% - (var(--margin) * 15));
+        z-index: 30;
+        border-top: 1px black solid;
+    }
+
+    /* when settings section expands, both move up */
+
+    .text-panel.settings-expanded .arrow-t {
+        transform:
+            translateY(calc(-50vh + (var(--margin) * 14))) rotate(0deg);
+    }
+
+    .text-panel.settings-expanded .arrow-ts {
+        transform:
+            translateY(calc(-50vh + (var(--margin) * 16))) rotate(-180deg);
+    }
+
+
+
+    /* fades */
+
+    .text-inner-fade,
+    .settings-fade {
+        left: 0;
+        width: 100%;
+    }
+
+    .text-inner-fade.top {
+        top: 0;
+    }
+
+    .text-panel.inner-expanded .text-inner-fade.bottom {
+        border: red 1px solid;
+        top: calc(49.2%);
+    }
+
+
+
+    .settings-fade.bottom {
+        top: calc(100% - 6rem);
+        border: 1px red solid;
+    }
+
+    .settings-fade.top {
+        border: 1px red solid;
+    }
+
+    .text-panel.inner-expanded .settings-fade.top{
+        transform: translateY(calc(var(--margin) * 5.8));
+    }
 
     /*  */
 

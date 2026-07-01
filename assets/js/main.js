@@ -237,3 +237,27 @@ function updateLiveDateTime() {
 
 updateLiveDateTime();
 setInterval(updateLiveDateTime, 1000);
+
+
+
+/* hash navigation */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const targetName = link.getAttribute("href").substring(1);
+
+    const targetSlide = document.querySelector(
+      `.slide[data-slide="${targetName}"]`
+    );
+
+    if (!targetSlide) return;
+
+    currentSlide = [...slides].indexOf(targetSlide);
+
+    updateSlide(false);
+
+    history.replaceState(null, "", "#" + targetName);
+  });
+});
