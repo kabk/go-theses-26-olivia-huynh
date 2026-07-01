@@ -1,0 +1,1118 @@
+@charset "UTF-8";
+
+/* =========================
+   1. Font Imports
+========================= */
+
+@font-face {
+    font-family: 'ABCDiatype';
+    src: url('../font/ABCDiatypeVariable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================
+   2. Variables
+========================= */
+
+:root {
+    --font-reg: 'ABCDiatype';
+
+    --font-size: 8pt;
+    --margin: 1rem;
+    --letter-spacing: 0.15em;
+    --line-height: 1.5;
+
+    --panel-width: 40vw;
+    --visual-width-open: 60vw;
+
+    --light-bg: white;
+    --dark-bg: black;
+}
+
+/* =========================
+   3. Reset / Base
+========================= */
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: var(--font-size);
+    font-weight: 600;
+    line-height: var(--line-height);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+sup {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    position: relative;
+    top: -0.3em;
+}
+
+.cite-heading {
+    min-width: calc(var(--margin) * 2);
+}
+
+b {
+    font-weight: 450;
+}
+
+i {
+    font-style: italic;
+}
+
+p {
+    margin: 0;
+}
+
+.reference-list {
+    text-align: left;
+}
+
+.colophon {
+    margin-top: var(--margin);
+    border: 1px black solid;
+
+    padding: var(--margin);
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--margin) / 2);
+}
+
+
+/* =========================
+   4. Layout
+========================= */
+
+.viewer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    height: 100vh;
+}
+
+.slide {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+
+    display: flex;
+    overflow: hidden;
+
+    font-family: var(--font-reg);
+    font-size: var(--font-size);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+}
+
+/* =========================
+   5. Background Image
+========================= */
+
+.slide-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+    object-position: center center;
+
+    z-index: 0;
+
+    transform: scale(1);
+    transform-origin: center center;
+
+    transition: transform 0.5s ease;
+}
+
+.slide.panel-open .slide-bg {
+    width: 100vw;
+    transform: scale(1.1);
+    transform-origin: 40vw center;
+}
+
+/* =========================
+   6. Panels
+========================= */
+
+.visual-panel,
+.text-panel {
+    position: relative;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: width 0.5s ease;
+}
+
+.visual-panel {
+    width: 100vw;
+    z-index: 1;
+}
+
+.text-panel {
+    width: 0;
+    z-index: 2;
+
+    background: transparent;
+    color: white;
+
+    text-transform: none;
+    font-size: 10pt;
+    line-height: 1.45;
+    letter-spacing: 0.1pt;
+    font-weight: 350;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    word-spacing: -0.5pt;
+    text-rendering: optimizeLegibility;
+}
+
+.fig-container {
+    border: 1px black solid;
+}
+
+.fig-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.fig-title,
+.fig-desc {
+    padding: var(--margin);
+}
+
+.fig-title {
+    min-width: calc(var(--margin) * 2);
+}
+
+.fig-image {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+
+    border-top: 1px black solid;
+}
+
+.fig-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Text panel boxes */
+
+.text-panel-inner,
+.text-panel-settings {
+    position: absolute;
+
+    width: calc(var(--panel-width) - ((var(--margin) * 3) * 2));
+    height: calc(50% - (var(--margin) * 3));
+
+    box-sizing: border-box;
+    margin: calc(var(--margin) * 3);
+    padding-inline: calc(var(--margin) * 1.5);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+
+    color: black;
+    border: 1px white solid;
+
+    transition:
+        height 0.5s ease,
+        opacity 0.25s ease,
+        transform 0.5s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--margin) / 2);
+}
+
+.text-panel-inner {
+    top: 0;
+    padding-block: calc(var(--margin) * 1.5);
+    background-color: rgb(230, 230, 230);
+    border-bottom: 0.5px black solid;
+
+    z-index: 20;
+}
+
+.text-panel-settings {
+    bottom: 0;
+    padding-block: calc(var(--margin) * 1.5);
+    background: white;
+    border-top: 0.5px black solid;
+
+    z-index: 10;
+}
+
+/* Mutually exclusive expanded states */
+
+.text-panel.inner-expanded .text-panel-inner {
+    height: calc(100% - (var(--margin) * 18));
+    z-index: 30;
+    border-bottom: 1px black solid;
+}
+
+.text-panel.inner-expanded .arrow-t {
+    transform:
+        translateY(calc(50vh - (var(--margin) * 16))) rotate(-180deg);
+}
+
+.text-panel.inner-expanded .arrow-ts {
+    transform:
+        translateY(calc(50vh - (var(--margin) * 14))) rotate(0deg);
+}
+
+.text-panel.settings-expanded .text-panel-settings {
+    height: calc(100% - (var(--margin) * 18));
+    z-index: 30;
+    border-top: 1px black solid;
+}
+
+/* when settings section expands, both move up */
+.text-panel.settings-expanded .arrow-t {
+    transform:
+        translateY(calc(-50vh + (var(--margin) * 14))) rotate(0deg);
+}
+
+.text-panel.settings-expanded .arrow-ts {
+    transform:
+        translateY(calc(-50vh + (var(--margin) * 16))) rotate(-180deg);
+}
+
+/* text panel inner fade */
+
+.text-inner-fade {
+    position: absolute;
+    left: calc(var(--margin) * 3);
+
+    width: calc(var(--panel-width) - ((var(--margin) * 3) * 2));
+    height: 6rem;
+
+    pointer-events: none;
+    z-index: 40;
+
+    opacity: 0;
+
+    transition:
+        top 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.text-inner-fade.top {
+    top: calc(var(--margin) * 3);
+
+    background: linear-gradient(to bottom,
+            rgba(230, 230, 230, 1),
+            rgba(230, 230, 230, 0));
+}
+
+.text-inner-fade.bottom {
+    top: calc(50% - 6rem);
+
+    background: linear-gradient(to bottom,
+            rgba(230, 230, 230, 0),
+            rgba(230, 230, 230, 1));
+}
+
+.text-panel.inner-expanded .text-inner-fade.bottom {
+    top: calc(100% - (var(--margin) * 15) - 6rem);
+}
+
+.text-panel.has-inner-overflow:not(.inner-at-top) .text-inner-fade.top {
+    opacity: 1;
+}
+
+.text-panel.has-inner-overflow:not(.inner-at-bottom) .text-inner-fade.bottom {
+    opacity: 1;
+}
+
+/* text-panel-settings */
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+
+.gen-desc {
+    padding-block: calc(var(--margin) / 2);
+}
+
+.gen-settings,
+.ref-settings {
+    border: 1px black solid;
+    width: 100%;
+    height: fit-content;
+}
+
+.settings-justified {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--margin);
+}
+
+.s-line {
+    border: 0.5px black solid;
+    width: 100%;
+}
+
+.img-format {
+    border: 1px black solid;
+    padding-inline: 2px;
+}
+
+.img-ref {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    overflow: hidden;
+
+    border-top: 1px black solid;
+}
+
+.img-ref img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.citation {
+    display: flex;
+    flex-direction: row;
+}
+
+.liveDateTime {
+    padding-top: var(--margin);
+}
+
+/* ref + source toggle */
+
+.img-ref,
+.source-desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.3s ease;
+}
+
+.ref-settings.show-img-ref .img-ref {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.ref-settings.show-source-desc .source-desc {
+    max-height: 200px;
+    opacity: 1;
+
+    border-top: 1px black solid;
+    padding: var(--margin);
+}
+
+/* text panel settings fade */
+
+.settings-fade {
+    position: absolute;
+
+    left: calc(var(--margin) * 3);
+
+    width: calc(var(--panel-width) - ((var(--margin) * 3) * 2));
+    height: 6rem;
+
+    pointer-events: none;
+    z-index: 35;
+
+    display: none;
+
+    transition:
+        top .5s ease,
+        opacity .25s ease;
+}
+
+.settings-fade.top {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0));
+}
+
+.settings-fade.bottom {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 1));
+}
+
+/* collapsed */
+
+.settings-fade.top {
+    top: 50%;
+}
+
+.settings-fade.bottom {
+    top: calc(100% - (var(--margin) * 3) - 6rem);
+}
+
+/* expanded */
+
+.text-panel.settings-expanded .settings-fade.top {
+    top: calc(100% - (var(--margin) * 18) - 6rem);
+}
+
+.text-panel.settings-expanded .settings-fade.bottom {
+    top: calc(100% - 6rem);
+}
+
+.text-panel.has-settings-overflow:not(.settings-at-top) .settings-fade.top {
+    display: block;
+}
+
+.text-panel.has-settings-overflow:not(.settings-at-bottom) .settings-fade.bottom {
+    display: block;
+}
+
+/* =========================
+   7. UI Overlay
+========================= */
+
+.ui {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 50;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-reg);
+    font-size: var(--font-size);
+
+    transition: width 0.5s ease;
+}
+
+.exit-btn,
+.text-btn,
+.arrow-r,
+.arrow-l,
+.v-line,
+.h-line,
+.plus-target,
+.arrow-t,
+.arrow-ts {
+    pointer-events: auto;
+}
+
+/* =========================
+   8. Crosshair / Grid
+========================= */
+
+.v-line,
+.h-line {
+    position: absolute;
+    opacity: 0.5;
+}
+
+.v-line {
+    left: 50%;
+    top: 0;
+
+    height: 100vh;
+
+    border-left: 1px solid black;
+
+    transform: translateX(-50%);
+    transition: height 0.5s ease;
+}
+
+.h-line {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100vw;
+
+    border-top: 1px solid black;
+
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease;
+}
+
+.plus-target {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 50px;
+    height: 50px;
+
+    opacity: 0.5;
+
+    transform: translate(-50%, -50%);
+}
+
+.plus-target::before,
+.plus-target::after {
+    content: "";
+    position: absolute;
+    background: black;
+}
+
+.plus-target::before {
+    top: 50%;
+
+    width: 100%;
+    height: 2px;
+
+    transform: translateY(-50%);
+}
+
+.plus-target::after {
+    left: 50%;
+
+    width: 2px;
+    height: 100%;
+
+    transform: translateX(-50%);
+}
+
+/* =========================
+   9. Navigation Buttons
+========================= */
+
+.arrow-r,
+.arrow-l,
+.arrow-t,
+.arrow-ts {
+    position: absolute;
+
+    width: calc(var(--margin) * 2);
+    aspect-ratio: 1 / 1;
+    margin: calc(var(--margin) * 3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+    user-select: none;
+
+    font-size: var(--font-size);
+    font-weight: 400;
+}
+
+.arrow-r,
+.arrow-l {
+    z-index: 10;
+
+    border: 1px solid black;
+    background: white;
+
+    transition: transform 0.3s ease;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.arrow-l {
+    left: 0;
+}
+
+.arrow-t,
+.arrow-ts {
+    color: black;
+    z-index: 40;
+    transition: transform 0.5s ease;
+}
+
+.arrow-t {
+    transform:
+        translateY(calc(var(--margin) * -1)) rotate(0deg);
+}
+
+.arrow-ts {
+    transform:
+        translateY(calc(var(--margin) * 1)) rotate(0deg);
+}
+
+/* =========================
+   10. Top Buttons
+========================= */
+
+.exit-btn,
+.text-btn {
+    position: absolute;
+
+    aspect-ratio: 1 / 1;
+    margin: calc(var(--margin) * 3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-weight: 300;
+    font-size: calc(var(--font-size) * 1.5);
+}
+
+.exit-btn {
+    top: 0;
+    left: 0;
+}
+
+.text-btn {
+    top: 0;
+    right: 0;
+
+    width: calc(var(--margin) * 2);
+
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+
+    transition: transform 0.3s ease;
+}
+
+/* slide progress */
+
+.slide-progress {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(var(--margin) * 2);
+    aspect-ratio: 1 / 1;
+    margin: calc(var(--margin) * 3);
+
+    font-size: var(--font-size);
+    pointer-events: none;
+    font-weight: 400;
+
+    z-index: 200;
+    color: black;
+}
+
+.slide-progress svg {
+    position: absolute;
+    inset: 0;
+    transform: rotate(-90deg);
+}
+
+.progress-bg,
+.progress-bar {
+    fill: none;
+    stroke-width: 6;
+}
+
+.progress-bg {
+    stroke: rgba(0, 0, 0, 0.35);
+}
+
+.progress-bar {
+    stroke: black;
+    stroke-linecap: round;
+
+    stroke-dasharray: 276.46;
+    stroke-dashoffset: 276.46;
+
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-count {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(var(--margin) * 2);
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--font-size);
+    letter-spacing: 0;
+
+    color: black;
+}
+
+/* =========================
+   11. Cover Slide
+========================= */
+
+.cover-title,
+.cover-year {
+    position: absolute;
+
+    margin: calc(var(--margin) * 3);
+
+    z-index: 3;
+
+    transform: translate(0, calc(-1.5 * var(--margin)));
+}
+
+.cover-title {
+    left: 0;
+}
+
+.cover-year {
+    left: calc(50% - (calc(1.5 * var(--margin))));
+}
+
+.cover-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: calc(var(--margin) * 6);
+    width: calc(50vw - (var(--margin) * 3));
+    margin: calc(var(--margin) * 3);
+
+    display: flex;
+    flex-direction: row;
+
+    z-index: 60;
+}
+
+.cover-grey {
+    height: calc(var(--margin) * 6);
+    aspect-ratio: 1 / 1;
+
+    background-color: rgb(202, 202, 202);
+
+    border: black 1px solid;
+    border-right: none;
+}
+
+.cover-black {
+    height: calc(var(--margin) * 6);
+    width: 100%;
+
+    padding-inline: calc(var(--margin) * 2);
+
+    background: white;
+    border: black 1px solid;
+
+    color: black;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    font-weight: 400;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.chapter {
+    background-color: rgb(202, 202, 202);
+}
+
+/* =========================
+   12. Slide States
+========================= */
+
+.slide.panel-open .visual-panel {
+    width: var(--visual-width-open);
+}
+
+.slide.panel-open .text-panel {
+    width: var(--panel-width);
+}
+
+.viewer.panel-open .ui {
+    width: var(--visual-width-open);
+}
+
+.viewer.panel-open .h-line {
+    width: calc(100vw + var(--panel-width));
+}
+
+.viewer.panel-open .v-line {
+    height: calc(100vh + var(--panel-width));
+}
+
+/* Cover slide */
+
+.viewer.cover-slide .arrow-l {
+    display: none;
+}
+
+.viewer.cover-slide .arrow-r {
+    transform: rotate(-90deg);
+}
+
+/* Subcover + Chapter slides */
+
+.viewer.subcover-slide .arrow-l,
+.viewer.chapter-slide .arrow-l {
+    display: flex;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+/* Chapter only */
+
+.viewer.chapter-slide .text-btn {
+    display: none;
+}
+
+/* Normal slides */
+
+.viewer:not(.cover-slide):not(.subcover-slide):not(.chapter-slide) .arrow-l {
+    display: flex;
+}
+
+/* =========================
+   13. Dark UI State
+========================= */
+
+.viewer.dark-ui {
+    color: white;
+    background: var(--dark-bg);
+}
+
+.viewer.dark-ui .arrow-r,
+.viewer.dark-ui .arrow-l,
+.viewer.dark-ui .exit-btn,
+.viewer.dark-ui .text-btn {
+    color: white;
+    border-color: white;
+    background-color: transparent;
+}
+
+.viewer.dark-ui .v-line,
+.viewer.dark-ui .h-line {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.viewer.dark-ui .plus-target::before,
+.viewer.dark-ui .plus-target::after {
+    background: white;
+}
+
+.viewer.dark-ui .slide-progress {
+    color: white;
+}
+
+.viewer.dark-ui .progress-bg {
+    stroke: rgba(255, 255, 255, 0.35);
+}
+
+.viewer.dark-ui .progress-bar {
+    stroke: rgb(255, 255, 255);
+}
+
+.viewer.dark-ui .progress-count {
+    color: rgb(255, 255, 255);
+}
+
+ .viewer.last-slide .arrow-r {
+    display: none;
+}
+
+/* =========================
+   14. Utilities / Overrides
+========================= */
+
+.viewer.no-panel-transition .visual-panel,
+.viewer.no-panel-transition .text-panel,
+.viewer.no-panel-transition .ui,
+.viewer.no-panel-transition .slide-bg {
+    transition: none;
+}
+
+
+
+
+
+/* =========================
+   iPhone View
+========================= */
+
+@media (max-width: 1000px) {
+    .slide {
+        flex-direction: column;
+    }
+
+    .visual-panel {
+        width: 100vw;
+        height: 100vh;
+        transition: height 0.5s ease;
+    }
+
+    .text-panel {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        height: 0;
+        transition: height 0.5s ease;
+
+        /* border: red 1px solid; */
+    }
+
+    .slide.panel-open .visual-panel {
+        width: 100vw;
+        height: 0vh;
+
+        opacity: 0;
+    }
+
+    .slide.panel-open .text-panel {
+        width: 100vw;
+        height: calc(100vh);
+    }
+
+    .viewer.panel-open .ui {
+        width: 100vw;
+        height: 0vh;
+
+        opacity: 0;
+    }
+
+    .text-panel-inner,
+    .text-panel-settings {
+        width: calc(100vw);
+        height: calc(50%);
+
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .slide-bg {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .slide.panel-open .slide-bg {
+        transform: scale(1.1);
+        transform-origin: center 0vh;
+    }
+
+   .viewer.panel-open .ui {
+        width: 100vw;
+        height: 0;
+    }
+
+    .viewer.panel-open .exit-btn,
+    .viewer.panel-open .arrow-r,
+    .viewer.panel-open .arrow-l,
+    .viewer.panel-open .v-line,
+    .viewer.panel-open .h-line,
+    .viewer.panel-open .plus-target,
+    .viewer.panel-open .slide-progress {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .viewer.panel-open .text-btn {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 999;
+    }
+
+
+    /*  */
+
+    .cover-year {
+        left: 0;
+        margin-bottom: calc(var(--margin) * -3);
+    }
+
+    .cover-desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        height: calc(var(--margin) * 8);
+        width: calc(100vw - (var(--margin) * 6));
+        margin: calc(var(--margin) * 3);
+        margin-bottom: calc(var(--margin) * 8);
+
+        display: flex;
+        flex-direction: row;
+
+        z-index: 60;
+    }
+
+    .cover-grey {
+        height: calc(var(--margin) * 8);
+        width: var(--margin);
+        aspect-ratio: none;
+
+        background-color: rgb(202, 202, 202);
+
+        border: black 1px solid;
+        border-right: none;
+    }
+
+    .cover-black {
+        height: calc(var(--margin) * 8);
+        width: 100%;
+
+        padding-inline: calc(var(--margin) * 2);
+
+        background: white;
+        border: black 1px solid;
+
+        color: black;
+        line-height: var(--line-height);
+        letter-spacing: var(--letter-spacing);
+        text-align: center;
+        font-weight: 400;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
