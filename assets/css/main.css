@@ -65,6 +65,7 @@ sup {
 
 .cite-heading {
     min-width: calc(var(--margin) * 2);
+    padding-block:0;
 }
 
 b {
@@ -81,6 +82,7 @@ p {
 
 .reference-list {
     text-align: left;
+    hyphens: none;
 }
 
 .colophon {
@@ -199,6 +201,9 @@ p {
 
 .fig-container {
     border: 1px black solid;
+    margin-block: var(--margin);
+    text-align: left;
+    hyphens: none;
 }
 
 .fig-text {
@@ -212,7 +217,7 @@ p {
 }
 
 .fig-title {
-    min-width: calc(var(--margin) * 2);
+    min-width: calc(var(--margin) * 3);
 }
 
 .fig-image {
@@ -331,7 +336,8 @@ p {
 
     transition:
         top 0.5s ease,
-        opacity 0.5s ease;
+        opacity 0.5s ease,
+        transform 0.5s ease;
 }
 
 .text-inner-fade.top {
@@ -360,6 +366,10 @@ p {
 
 .text-panel.has-inner-overflow:not(.inner-at-bottom) .text-inner-fade.bottom {
     opacity: 1;
+}
+
+.text-panel.inner-expanded .settings-fade.top {
+    transform: translateY(calc(var(--margin) * 11.775));
 }
 
 /* text-panel-settings */
@@ -418,6 +428,12 @@ p {
 .citation {
     display: flex;
     flex-direction: row;
+
+    align-items: start;
+    justify-content:left;
+
+    text-align: left;
+    hyphens: none;
 }
 
 .liveDateTime {
@@ -466,8 +482,9 @@ p {
     display: none;
 
     transition:
-        top .5s ease,
-        opacity .25s ease;
+        top 0.5s ease,
+        opacity 0.5s ease,
+        transform 0.5s ease;
 }
 
 .settings-fade.top {
@@ -495,11 +512,11 @@ p {
 /* expanded */
 
 .text-panel.settings-expanded .settings-fade.top {
-    top: calc(100% - (var(--margin) * 18) - 6rem);
+    top: calc(var(--margin) * 15);
 }
 
 .text-panel.settings-expanded .settings-fade.bottom {
-    top: calc(100% - 6rem);
+    
 }
 
 .text-panel.has-settings-overflow:not(.settings-at-top) .settings-fade.top {
@@ -508,6 +525,11 @@ p {
 
 .text-panel.has-settings-overflow:not(.settings-at-bottom) .settings-fade.bottom {
     display: block;
+}
+
+.text-panel.settings-expanded .text-inner-fade.top,
+.text-panel.settings-expanded .text-inner-fade.bottom {
+    transform: translateY(calc(-50vh + (var(--margin) * 15)));
 }
 
 /* =========================
@@ -852,7 +874,7 @@ p {
 }
 
 .slide.chapter {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(255, 255, 255);
 }
 
 /* =========================
@@ -928,6 +950,11 @@ p {
     color: white;
     border-color: white;
     background-color: transparent;
+}
+
+.viewer.dark-ui .text-btn{
+    border-color: lime;
+    color: lime;
 }
 
 .viewer.dark-ui .v-line,
