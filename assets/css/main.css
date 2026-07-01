@@ -1139,7 +1139,6 @@ p {
     }
 
     .text-panel.inner-expanded .text-inner-fade.bottom {
-        border: red 1px solid;
         top: calc(49.2%);
     }
 
@@ -1147,12 +1146,9 @@ p {
 
     .settings-fade.bottom {
         top: calc(100% - 6rem);
-        border: 1px red solid;
     }
 
-    .settings-fade.top {
-        border: 1px red solid;
-    }
+    /* .settings-fade.top {} */
 
     .text-panel.inner-expanded .settings-fade.top{
         transform: translateY(calc(var(--margin) * 5.8));
