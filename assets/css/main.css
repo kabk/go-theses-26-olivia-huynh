@@ -1005,6 +1005,11 @@ p {
 ========================= */
 
 @media (max-width: 1000px) {
+
+    :root{
+        --font-size: 7pt;
+    }
+
     .slide {
         flex-direction: column;
     }
@@ -1021,6 +1026,7 @@ p {
         width: 100vw;
         height: 0;
         transition: height 0.5s ease;
+        font-size: 8pt;
     }
 
     .slide.panel-open .visual-panel {
@@ -1156,8 +1162,16 @@ p {
 
     /*  */
 
+    .cover-title{
+        margin: 0;
+        margin-left: calc(var(--margin) * 3);
+        width: 100px;
+    }
+
     .cover-year {
         left: 0;
+        margin: 0;
+        margin-left: calc(var(--margin) * 3);
         margin-bottom: calc(var(--margin) * -3);
     }
 
@@ -1166,36 +1180,40 @@ p {
         bottom: 0;
         left: 0;
 
-        height: calc(var(--margin) * 8);
+        height: fit-content;
         width: calc(100vw - (var(--margin) * 6));
         margin: calc(var(--margin) * 3);
         margin-bottom: calc(var(--margin) * 8);
 
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
 
+        border: 1px black solid;
         z-index: 60;
     }
 
     .cover-grey {
-        height: calc(var(--margin) * 8);
-        width: var(--margin);
+        height: calc(var(--margin));
+        width: 100%;
         aspect-ratio: none;
 
         background-color: rgb(202, 202, 202);
 
-        border: black 1px solid;
-        border-right: none;
+        border: none;
+        border-bottom: black 1px solid;
     }
 
     .cover-black {
-        height: calc(var(--margin) * 8);
-        width: 100%;
+        height: calc(var(--margin) * 10);
+        width: fit-content;
 
         padding-inline: calc(var(--margin) * 2);
 
         background: white;
-        border: black 1px solid;
+        border: 0;
 
         color: black;
         line-height: var(--line-height);
