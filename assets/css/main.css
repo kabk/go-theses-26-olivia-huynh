@@ -916,7 +916,7 @@ p {
 .viewer.subcover-slide .arrow-l,
 .viewer.chapter-slide .arrow-l {
     display: flex;
-    left: 0;
+    left: var(--margin);
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
