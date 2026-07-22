@@ -389,6 +389,8 @@ p {
     border: 1px black solid;
     width: 100%;
     height: fit-content;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .settings-justified {
@@ -1006,7 +1008,7 @@ p {
 
 @media (max-width: 1000px) {
 
-    :root{
+    :root {
         --font-size: 7pt;
     }
 
@@ -1095,7 +1097,7 @@ p {
     /* extension */
 
 
-    
+
     .text-panel.inner-expanded .text-panel-inner {
         height: calc(100% - (var(--margin) * 15));
         z-index: 30;
@@ -1156,13 +1158,13 @@ p {
 
     /* .settings-fade.top {} */
 
-    .text-panel.inner-expanded .settings-fade.top{
+    .text-panel.inner-expanded .settings-fade.top {
         transform: translateY(calc(var(--margin) * 5.8));
     }
 
     /*  */
 
-    .cover-title{
+    .cover-title {
         margin: 0;
         margin-left: calc(var(--margin) * 3);
         width: 100px;
